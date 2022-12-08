@@ -1,0 +1,60 @@
+def get_Total(card_no):
+    total = 0
+    for i in range(0, len(card_no)):
+
+        if i % 2 == 0
+            total +=int(card_no)
+        else:
+            num = int(card_no)*2
+                if num >9:
+                    num =str(num)
+                    s = int(num[0])+int(num[1])
+                    total+=s
+                else:
+
+    return total
+
+def format_check():
+    pass
+
+
+def length_check(card_no):
+    k = len(card_no)
+    if k == 11:
+        return True
+    else:
+        return False
+
+
+def isValid(total):
+    r = total % 10
+    if r == 0:
+        return True
+    else:
+        return False
+
+
+def main():
+    count = 0
+    card_no = input("Enter card number")
+    while length_check(card_no) == False:
+        count += 1
+        if count >= 3:
+            print(" too many attempts")
+            exit(0)
+        else:
+            print("Invalid - Try again")
+            card_no = input("Enter card number")
+
+    total = get_Total(card_no)
+    while isValid(total) == False:
+        print("Invalid - Try again")
+        card_no = input("Enter card number")
+        total = get_Total(card_no)
+        count += 1
+        if count >= 3:
+            print(" too many attempts")
+            exit(0)
+
+
+main()
